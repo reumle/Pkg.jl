@@ -623,6 +623,8 @@ const RegistrySpec = Registry.RegistrySpec
     upgrade_manifest(manifest_path::String)
 
 Upgrades the format of the current or specified manifest file from v1.0 to v2.0 without re-resolving.
+In case of warning such as `The active manifest file is missing a julia version entry.` you can supply that entry with `Pkg.resolve()` 
+and if there are resolve conflicts consider `Pkg.update()`.""" maxlog = 1 _id = Symbol(manifest_file)
 """
 const upgrade_manifest = API.upgrade_manifest
 
